@@ -1,3 +1,77 @@
-section{
-    background-color: red;
+/* ===== About Hero ===== */
+.about-hero {
+  position: relative;
+  background: url('../images/about-hero.jpg') no-repeat center center/cover;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+  min-height: 60vh;
+  overflow: hidden;
+  animation: bgSlide 15s linear infinite; /* تحريك الخلفية */
+}
+
+/* Overlay */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+/* Content */
+.about-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.about-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: "Cairo", sans-serif;
+}
+
+.about-content p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-family: "Cairo", sans-serif;
+}
+
+/* Icon animation */
+.icon {
+  display: inline-block;
+  margin-right: 8px;
+  animation: bounce 2s infinite;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  0% {opacity:0; transform: translateY(20px);}
+  100% {opacity:1; transform: translateY(0);}
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+  60% { transform: translateY(-3px); }
+}
+
+@keyframes bgSlide {
+  0% { background-position: center top; }
+  50% { background-position: center center; }
+  100% { background-position: center top; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .about-content h1 {
+    font-size: 28px;
+  }
+  .about-content p {
+    font-size: 16px;
+  }
 }

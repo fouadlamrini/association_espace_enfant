@@ -1,3 +1,105 @@
-section{
-    background-color: greenyellow;
+/* ===== Hero Section ===== */
+.activities-hero {
+  position: relative;
+  /* background: url('../images/activities-hero.jpg') no-repeat center center/cover; */
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+  min-height: 50vh;
+}
+
+.activities-hero::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index:1;
+}
+
+.activities-content {
+  position: relative;
+  z-index:2;
+}
+
+.activities-content h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-family: "Cairo", sans-serif;
+}
+
+.activities-content p {
+  font-size: 18px;
+  font-family: "Cairo", sans-serif;
+}
+
+/* ===== Activities Cards ===== */
+.activities-list {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.activities-list .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.activity-card {
+  background-color: #fff;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;               /* للبداية قبل animation */
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.activity-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.activity-card h2 {
+  font-size: 20px;
+  margin: 15px 10px 10px;
+  font-family: "Cairo", sans-serif;
+}
+
+.activity-card p {
+  font-size: 16px;
+  margin: 0 10px 15px;
+  font-family: "Cairo", sans-serif;
+  line-height: 1.4;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width:768px) {
+  .activities-content h1 {
+    font-size: 28px;
+  }
+  .activities-content p {
+    font-size: 16px;
+  }
+  .activity-card img {
+    height: 150px;
+  }
 }
