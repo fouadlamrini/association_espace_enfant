@@ -34,6 +34,7 @@ pageLink.addEventListener('click',function(e){
          cssFile = "../css/contact.css";
          jsFile="../js/contact.js";
         break;
+      
    }
    fetch(page)
    .then(response=> response.text())
