@@ -1,0 +1,92 @@
+/* ===== Navbar ===== */
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 30px;
+  position: relative;
+}
+
+/* ===== logo avec text===== */
+header nav ul li.logo {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  margin-right: auto;     
+  max-width: 160px;       
+}
+
+header nav ul li.logo img {
+  max-height: 50px;  
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+header nav ul li.logo .logo-text {
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+header nav ul li.logo .logo-text p {
+  margin: 0;
+  line-height: 1.2;
+  font-size: 11px;       
+  color: #333;
+  font-family: "Cairo", sans-serif;
+  font-weight: 600;
+}
+
+/* =====  Navbar link===== */
+header nav ul li:not(.logo) {
+  display: inline-block;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-family: "Cairo", sans-serif;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #0078ff;
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+  width: 100%;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #0078ff;
+}
+
+/* ===== responsive ===== */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header nav ul li.logo {
+    margin: 0;
+    max-width: 200px;
+  }
+}
